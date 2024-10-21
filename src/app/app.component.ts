@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
-import { BooksReducer } from './store/books.reducer';
+import { bookshelfReducer } from './store/bookshelf.reducer';
 import { BookSearchComponent } from './components/book-search/book-search.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BookshelfComponent } from './components/bookshelf/bookshelf.component';

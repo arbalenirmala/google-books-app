@@ -4,7 +4,7 @@
     <div class="container-fluid">
       <a routerLink="/search">Search Books</a>
       <a routerLink="/bookshelf">My Bookshelf
-        <span class="badge text-bg-secondary">{{ bookshelfCount }}</span>
+        <span class="badge text-bg-secondary">{{ bookshelfCount$ | async }}</span>
       </a>
       @if (!isLoggedIn) {
       <button type="button" class="btn btn-outline-primary" (click)="login()">Log In</button>

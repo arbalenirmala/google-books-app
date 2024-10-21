@@ -1,16 +1,20 @@
 <h4>Your Bookshelf</h4>
-@for (book of books; track $index) {
-<div class="row">
-    <div class="col-3">
-        <h6>{{ book.volumeInfo.title }}</h6>
-        <p>Authors: {{ book.volumeInfo.authors.join(', ') }}</p>
-        <img [src]="book.volumeInfo.imageLinks.thumbnail" alt="Book cover" />
-        <app-book-rating [(rating)]="book.rating"></app-book-rating>
-    </div>
+<div *ngIf="bookshelf$ | async as books">
+    @for (book of books; track $index) {
+    <div class="row">
+        <div class="col-3">
+            <h6>{{ book.volumeInfo.title }}</h6>
+            <p>Authors: {{ book.volumeInfo.authors.join(', ') }}</p>
+            <img [src]="book.volumeInfo.imageLinks.thumbnail" alt="Book cover" />
+            <app-book-rating [(rating)]="book.rating"></app-book-rating>
+        </div>
 
-    <div class="col-6">
-        {{ book.volumeInfo.description }}
-        <button type="button" class="btn btn-outline-primary" (click)="removeBook(book.id)">Remove</button>
+        <div class="col-6">
+            {{ book.volumeInfo.description }}
+            <button type="button" class="btn btn-outline-primary" (click)="removeBook(book.id)">Remove</button>
+        </div>
     </div>
+    <hr>
+    }
 </div>
-}
+<p *ngIf="!(bookshelf$ | async)?.length">No books in your bookshelf.</p>
