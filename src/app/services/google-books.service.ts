@@ -10,13 +10,13 @@ export class GoogleBooksService {
   //private apiUrl = 'https://www.googleapis.com/books/v1/volumes';
   private apiUrl = 'https://www.googleapis.com/books/v1/volumes?q=';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   searchBooks(query: string): Observable<any> {
     //const url = `${this.apiUrl}?q=${query}&key=${this.apiKey}`;
     return this.http.get<any>(`${this.apiUrl}${query}`);
     //return this.http.get(`${this.apiUrl}${query}`).pipe(
-      //map((data: any) => data.items || [])
+    //map((data: any) => data.items || [])
     //);
   }
 

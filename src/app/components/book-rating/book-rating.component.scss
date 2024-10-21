@@ -1,18 +1,17 @@
 .rating {
-    display: flex;
-    cursor: pointer;
-  
-    .star {
-      font-size: 2rem;
-      color: gray;
-  
-      &.rated {
-        color: gold;
-      }
-  
-      &:hover {
-        color: gold;
-      }
+  display: flex;
+  cursor: pointer;
+
+  .star {
+    font-size: 2rem;
+    color: gray;
+
+    &.rated {
+      color: gold;
+    }
+
+    &:hover {
+      color: gold;
     }
   }
-  
+}

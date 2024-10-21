@@ -29,5 +29,5 @@ export class BookshelfService {
   clearBooks(): void {
     localStorage.removeItem(this.storageKey);
   }
-  
+
 }

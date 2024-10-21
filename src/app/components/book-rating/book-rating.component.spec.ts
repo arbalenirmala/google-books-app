@@ -10,8 +10,8 @@ describe('BookRatingComponent', () => {
     await TestBed.configureTestingModule({
       imports: [BookRatingComponent]
     })
-    .compileComponents();
-    
+      .compileComponents();
+
     fixture = TestBed.createComponent(BookRatingComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

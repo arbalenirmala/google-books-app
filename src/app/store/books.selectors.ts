@@ -1,4 +1,3 @@
-// books.selectors.ts
 import { createFeatureSelector, createSelector } from '@ngrx/store';
 import { BooksState } from './books.reducer';
 

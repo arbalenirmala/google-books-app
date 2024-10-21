@@ -1,8 +1,8 @@
-import { Component , OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { BookshelfService } from '../../services/bookshelf.service';
 import { Book } from '../../models/book.model';
 import { FormsModule } from '@angular/forms';
-import {BookRatingComponent} from '../book-rating/book-rating.component';
+import { BookRatingComponent } from '../book-rating/book-rating.component';
 
 @Component({
   selector: 'app-bookshelf',
@@ -15,7 +15,7 @@ export class BookshelfComponent implements OnInit {
 
   books: Book[] = [];
 
-  constructor(private bookshelfService: BookshelfService) {}
+  constructor(private bookshelfService: BookshelfService) { }
 
   ngOnInit(): void {
     this.loadBooks();
@@ -27,7 +27,7 @@ export class BookshelfComponent implements OnInit {
 
   addBook(book: Book): void {
     this.bookshelfService.addBook(book);
-    this.loadBooks(); 
+    this.loadBooks();
   }
 
   removeBook(bookId: string): void {

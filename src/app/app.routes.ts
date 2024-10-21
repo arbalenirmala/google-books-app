@@ -3,7 +3,7 @@ import { BookSearchComponent } from './components/book-search/book-search.compon
 import { BookshelfComponent } from './components/bookshelf/bookshelf.component';
 
 export const routes: Routes = [
-    { path: '', redirectTo: '/search', pathMatch: 'full' }, // Redirect to search page by default
+    { path: '', redirectTo: '/search', pathMatch: 'full' },
     { path: 'search', component: BookSearchComponent },
     { path: 'bookshelf', component: BookshelfComponent },
     { path: '**', redirectTo: '/search' }

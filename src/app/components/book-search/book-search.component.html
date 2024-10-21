@@ -1,34 +1,35 @@
-    <div class="row">
-            <div class="input-group mt-3 mb-3 book-search">
-                <input type="text" class="form-control" [(ngModel)]="searchQuery" placeholder="Search for books..." (keyup.enter)="searchBooks()">
-                <button class="btn btn-outline-secondary" type="button" (click)="searchBooks()">Search</button>
-              </div>
-            @if (searchResults.length > 0) {    
-                    <ul>
-                        @for (book of searchResults; track $index) {
-                            <li>
-                                <div class="row">
-                                    <div class="col-4">
-                                        <h4>{{ book.volumeInfo.title }}</h4>
-                                        @if(book.volumeInfo.imageLinks?.thumbnail){
-                                            <img [src]="book.volumeInfo.imageLinks.thumbnail" alt="Book cover" />
-                                            <app-book-rating [(rating)]="book.rating"></app-book-rating>
-                                            <button type="button" class="btn btn-outline-success" (click)="addToBookshelf(book)">Add to Bookshelf</button>
-                    
-                                        }
-                                    </div>
-                                    <div class="col-6">
-                                        {{ book.volumeInfo.description }}
-                                    </div>
-                                </div>
-                            </li>
-                            <hr>
-                        }
-                    </ul>
-                   
-                }       
-            @else {
-                <div class="col">No books in your bookshelf.</div>
-            }
-    </div>    
+<div class="row">
+    <div class="input-group mt-3 mb-3 book-search">
+        <input type="text" class="form-control" [(ngModel)]="searchQuery" placeholder="Search for books..."
+            (keyup.enter)="searchBooks()">
+        <button class="btn btn-outline-secondary" type="button" (click)="searchBooks()">Search</button>
+    </div>
+    @if (searchResults.length > 0) {
+    <ul>
+        @for (book of searchResults; track $index) {
+        <li>
+            <div class="row">
+                <div class="col-4">
+                    <h4>{{ book.volumeInfo.title }}</h4>
+                    @if(book.volumeInfo.imageLinks?.thumbnail){
+                    <img [src]="book.volumeInfo.imageLinks.thumbnail" alt="Book cover" />
+                    <app-book-rating [(rating)]="book.rating"></app-book-rating>
+                    <button type="button" class="btn btn-outline-success" (click)="addToBookshelf(book)">Add to
+                        Bookshelf</button>
 
+                    }
+                </div>
+                <div class="col-6">
+                    {{ book.volumeInfo.description }}
+                </div>
+            </div>
+        </li>
+        <hr>
+        }
+    </ul>
+
+    }
+    @else {
+    <div class="col">No books in your bookshelf.</div>
+    }
+</div>

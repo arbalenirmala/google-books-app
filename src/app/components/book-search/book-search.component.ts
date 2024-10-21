@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { GoogleBooksService } from '../../services/google-books.service';
-import {FormsModule}   from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { Book } from '../../models/book.model';
 import { BookshelfService } from '../../services/bookshelf.service';
-import {BookRatingComponent} from '../book-rating/book-rating.component';
+import { BookRatingComponent } from '../book-rating/book-rating.component';
 
 @Component({
   selector: 'app-book-search',
@@ -18,9 +18,9 @@ export class BookSearchComponent {
   searchResults: any[] = [];
 
   constructor(
-    private googleBooksService: GoogleBooksService , 
+    private googleBooksService: GoogleBooksService,
     private bookshelfService: BookshelfService
-  ) {}
+  ) { }
 
   searchBooks(): void {
     if (this.searchQuery.trim() === '') return;
@@ -36,9 +36,9 @@ export class BookSearchComponent {
   }
 
   addToBookshelf(book: Book): void {
-    let a=this.bookshelfService.getBooks();
+    let a = this.bookshelfService.getBooks();
     const alreadyInBookshelf = a.find((b) => b.id === book.id);
-    if(!alreadyInBookshelf){
+    if (!alreadyInBookshelf) {
       const bookToAdd: Book = {
         id: book.id,
         volumeInfo: {
