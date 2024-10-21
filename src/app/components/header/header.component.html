@@ -1,0 +1,18 @@
+<div class="row">
+  <h4>Welcome {{ isLoggedIn ? userName : 'Guest, Please Login' }}!</h4>
+    <nav class="navbar">
+      <div class="container-fluid">
+          <a routerLink="/search">Search Books</a>
+          <a routerLink="/bookshelf">My Bookshelf
+            <span class="badge text-bg-secondary">{{ bookshelfCount  }}</span>
+          </a>
+          @if (!isLoggedIn) {
+              <button type="button" class="btn btn-outline-primary" (click)="login()">Log In</button>
+          }
+          @if(isLoggedIn){
+              <button type="button" class="btn btn-outline-primary" (click)="logout()">Log Out</button>
+          }
+      </div>
+    </nav>
+</div>
+<router-outlet></router-outlet>

@@ -1,11 +1,27 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
+import {HeaderComponent} from './components/header/header.component';
+import { BooksReducer } from './store/books.reducer'; // Adjust the path if needed
+import {BookSearchComponent} from './components/book-search/book-search.component';
+import { HttpClientModule } from '@angular/common/http';
+import {BookshelfComponent} from './components/bookshelf/bookshelf.component';
+import { FormsModule } from '@angular/forms';
+import {BookRatingComponent} from './components/book-rating/book-rating.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet],
+  imports: [CommonModule, 
+    RouterOutlet, 
+    FormsModule,
+    HttpClientModule, 
+    HeaderComponent,
+    BookSearchComponent,
+    BookshelfComponent,
+    BookRatingComponent,
+    //StoreModule.forRoot({ bookshelf: booksReducer })
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
