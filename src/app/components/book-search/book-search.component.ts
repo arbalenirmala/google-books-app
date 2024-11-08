@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { GoogleBooksService } from '../../services/google-books.service';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
 import { Book } from '../../models/book.model';
 import { BookshelfService } from '../../services/bookshelf.service';
 import { BookRatingComponent } from '../book-rating/book-rating.component';
@@ -11,7 +10,8 @@ import { addToBookshelf } from '../../store/bookshelf.actions';
 @Component({
   selector: 'app-book-search',
   standalone: true,
-  imports: [FormsModule, HttpClientModule, BookRatingComponent],
+  imports: [FormsModule, 
+            BookRatingComponent],
   templateUrl: './book-search.component.html',
   styleUrl: './book-search.component.scss'
 })
